@@ -27,11 +27,11 @@ all additional languge features will be included with annotations
 @getter
 @setter
 
-? auto type assign
+? auto type inference
 i.e
-?myVar = 10; would be int myVar = 10;
+`?myVar = 10;` would become `int myVar = 10;`
 
-=<varname> constructors
+=<<varname>> constructors parameters, with type inferance
 
 `MyClass(=myVar);`
 
