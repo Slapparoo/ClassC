@@ -55,17 +55,22 @@ class <class_name> ([extends, implements..]) {
 e.g
 ```c
 class MyClass {
+    // Variables - standard c variable definitions 
     int myVar;
 
+    // Constructors 
     MyClass(=myVar);
 
+    // functions standard c function definitions
     void add(int value) {
         myVar += value;
     }
 }
 ```
-or the following to extend Object, and implement OtherFunction,
+Or the following to extend Object, and implement OtherFunction,
 at compile time it can easily determine if something is a class or interface
+
+The standard familiar parameter passing pattern is used.
 ```c
 class MyClass (Object, OtherFunction) {
     int myVar;
@@ -77,7 +82,6 @@ class MyClass (Object, OtherFunction) {
     }
 }
 ```
-
 
 ## Compiler ##
 
@@ -97,7 +101,8 @@ Extends, implements
 
 **Alpha 0.3**
 
-Annotations
+Annotations - compile time
+- not sure if there will be runtime I haven't explored that far into it, initially there will be no runtime introspection.
 
 **Alpha 0.4**
 
@@ -106,7 +111,15 @@ Ref counting and auto clean-up
 **Alpha 0.5**
 
 Parameter default values
-`void myFunction(int x =0, int y = 0);`
+`void myFunction(int x = 0, int y = 0);`
+
+which allows a function to be called as:
+```C
+int x = 10, y = 20;
+myFunction(x, y);
+myFunction(x);
+myFunction();
+```
 
 **Alpha 0.x**
 
