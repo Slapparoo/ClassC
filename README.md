@@ -7,12 +7,12 @@ By default everything is public.
 
 Variables may also always be public as they will just be defined in a struct
 
-** new keywords **
+**new keywords**
 class
 interface
 signature
 
-** new syntax **
+**new syntax**
 @ annotations
 
 all additional languge features will be included with annotations
@@ -36,7 +36,7 @@ i.e
 
 creates a constructor which accepts a paramater of same type as myVar and set myVar to the value passed.
 
-** basic layout **
+**basic layout**
 
 ```
 class <class_name> ([extends, implements..]) {
@@ -65,30 +65,30 @@ Compiles ClassC to c
 
 ## Road Map ##
 
-** Aplha 0.1 **
+**Aplha 0.1**
 Base Lexer, Paser, Compiler
 * No Annotations
 * No extends
 
-** Alpha 0.2 **
+**Alpha 0.2**
 Extends
 
-** Alpha 0.3 **
+**Alpha 0.3**
 Annotations
 
-** Alpha 0.4 **
+**Alpha 0.4**
 Ref counting and auto cleanup
 
-** Alpha 0.5 **
+**Alpha 0.5**
 Parameter default values
 `void myFunction(int x =0, int y = 0);`
 
-** Aplha 0.x **
+**Aplha 0.x**
 Basic Standard library written in ClassC
 
 At this stage I am thinking something which uses MUSL, but directly cals the syscall functions for kernel functions.
 
-** Beta 0.1 **
+**Beta 0.1**
 re-write compiler from c to ClassC
 
 ## compiler output ##
