@@ -8,11 +8,13 @@ By default everything is public.
 Variables may also always be public as they will just be defined in a struct
 
 **new keywords**
+
 class
 interface
 signature
 
 **new syntax**
+
 @ annotations
 
 all additional languge features will be included with annotations
@@ -28,7 +30,6 @@ all additional languge features will be included with annotations
 ? auto type assign
 i.e
 ?myVar = 10; would be int myVar = 10;
-
 
 =<varname> constructors
 
@@ -61,37 +62,46 @@ class MyClass {
 ```
 
 ## Compiler ##
+
 Compiles ClassC to c
 
 ## Road Map ##
 
 **Aplha 0.1**
+
 Base Lexer, Paser, Compiler
 * No Annotations
 * No extends
 
 **Alpha 0.2**
+
 Extends
 
 **Alpha 0.3**
+
 Annotations
 
 **Alpha 0.4**
+
 Ref counting and auto cleanup
 
 **Alpha 0.5**
+
 Parameter default values
 `void myFunction(int x =0, int y = 0);`
 
 **Aplha 0.x**
+
 Basic Standard library written in ClassC
 
 At this stage I am thinking something which uses MUSL, but directly cals the syscall functions for kernel functions.
 
 **Beta 0.1**
+
 re-write compiler from c to ClassC
 
 ## compiler output ##
+
 c file
 ```
 functions...
