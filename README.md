@@ -1,27 +1,27 @@
 # ClassC
-ClassC Class Langauge Extension Compiler for C, 
+ClassC Class language Extension Compiler for C, 
 
 Its c with a couple of extensions to allow Class containers.
 
-So with ver little maunipulation the compiler will output c code, which can then be compiled using your favorite c langauge compiler (at this stage I am thinking C17)
+So with very little manipulation the compiler will output c code, which can then be compiled using your favourite c language compiler (at this stage I am thinking C17)
 
-By default everything is public. and as all the features are added can get anannotation to make them `@private`
+By default everything is public.
 
-Everything compiled will be available in C and Visa Versa - inside c some patterns will need to be adheared to.
+Everything compiled will be available in C and Visa Versa - inside c some patterns will need to be adhered to.
 
-Variables may endup always be public as they will just be defined in a struct, so when used in ClassC could be 'gaurded' but always available in c.
+Variables may end up always be public as they will just be defined in a struct, so when used in ClassC could be 'guarded' but always available in c.
 
 **new keywords**
 
 * `class` definition
 * `interface` - interface definition
-* `signature` - synonimous with a header file, and used to reference precompiled classes
+* `signature` - synonymous with a header file, and used to reference precompiled classes
 
 **new syntax**
 
 @ annotations
 
-all additional langauge features will be included with annotations
+all additional language features will be included with annotations
 @public
 @private
 @static
@@ -37,11 +37,11 @@ The idea being learning and using will be simple and remain simple, but complexi
 i.e
 `?myVar = 10;` would become `int myVar = 10;`
 
-`=<varname>` constructors parameters, with type inferance
+`=<varname>` constructors parameters, with type inference
 
 `MyClass(=myVar);`
 
-creates a constructor which accepts a paramater of same type as myVar and set myVar to the value passed.
+creates a constructor which accepts a parameter of same type as myVar and set myVar to the value passed.
 
 **basic layout**
 
@@ -87,9 +87,9 @@ Compiles ClassC to c
 
 ## Road Map ##
 
-**Aplha 0.1**
+**Alpha 0.1**
 
-Base Lexer, Paser, Compiler
+Base Lexer, Parser, Compiler
 * No Annotations
 * No extends
 
@@ -103,18 +103,18 @@ Annotations
 
 **Alpha 0.4**
 
-Ref counting and auto cleanup
+Ref counting and auto clean-up
 
 **Alpha 0.5**
 
 Parameter default values
 `void myFunction(int x =0, int y = 0);`
 
-**Aplha 0.x**
+**Alpha 0.x**
 
 Basic Standard library written in ClassC
 
-At this stage I am thinking something which uses MUSL, but directly cals the syscall functions for kernel functions.
+At this stage I am thinking something which uses MUSL, but directly calls the `syscall` functions for kernel functions.
 
 **Beta 0.1**
 
@@ -149,6 +149,6 @@ signature MyClass {
     void myFunction();
 }
 ```
-compile stript
+compile script
 
 GCC, clang, MSVC etc
