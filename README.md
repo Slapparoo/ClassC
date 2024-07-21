@@ -9,8 +9,6 @@ By default everything is public.
 
 Everything compiled will be available in C and Visa Versa - inside c some patterns will need to be adhered to.
 
-Variables may end up always be public as they will just be defined in a struct, so when used in ClassC could be 'guarded' but always available in c.
-
 **new keywords**
 
 * `class` definition
