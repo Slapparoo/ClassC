@@ -13,9 +13,9 @@ Variables may endup always be public as they will just be defined in a struct, s
 
 **new keywords**
 
-class - class definition
-interface - interface definition
-signature - synonimous with a header file, and used to reference precompiled classes
+* `class` definition
+* `interface` - interface definition
+* `signature` - synonimous with a header file, and used to reference precompiled classes
 
 **new syntax**
 
