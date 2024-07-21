@@ -57,7 +57,7 @@ class <class_name> ([extends, implements..]) {
 e.g
 ```c
 class MyClass {
-    int myVar;`
+    int myVar;
 
     MyClass(=myVar);
 
