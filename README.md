@@ -31,7 +31,7 @@ all additional languge features will be included with annotations
 i.e
 `?myVar = 10;` would become `int myVar = 10;`
 
-=<<varname>> constructors parameters, with type inferance
+`=<varname>` constructors parameters, with type inferance
 
 `MyClass(=myVar);`
 
