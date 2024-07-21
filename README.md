@@ -1,23 +1,27 @@
 # ClassC
 ClassC Class Langauge Extension Compiler for C, 
 
-Its c with a couple of extensions to allow Class containers
+Its c with a couple of extensions to allow Class containers.
 
-By default everything is public.
+So with ver little maunipulation the compiler will output c code, which can then be compiled using your favorite c langauge compiler (at this stage I am thinking C17)
 
-Variables may also always be public as they will just be defined in a struct
+By default everything is public. and as all the features are added can get anannotation to make them `@private`
+
+Everything compiled will be available in C and Visa Versa - inside c some patterns will need to be adheared to.
+
+Variables may endup always be public as they will just be defined in a struct, so when used in ClassC could be 'gaurded' but always available in c.
 
 **new keywords**
 
-class
-interface
-signature
+class - class definition
+interface - interface definition
+signature - synonimous with a header file, and used to reference precompiled classes
 
 **new syntax**
 
 @ annotations
 
-all additional languge features will be included with annotations
+all additional langauge features will be included with annotations
 @public
 @private
 @static
@@ -26,6 +30,8 @@ all additional languge features will be included with annotations
 @throws
 @getter
 @setter
+
+The idea being learning and using will be simple and remain simple, but complexity is available if required.
 
 ? auto type inference
 i.e
@@ -39,7 +45,7 @@ creates a constructor which accepts a paramater of same type as myVar and set my
 
 **basic layout**
 
-```
+```c
 class <class_name> ([extends, implements..]) {
     [variables definitions]
     [constructor definitions]
@@ -49,7 +55,7 @@ class <class_name> ([extends, implements..]) {
 [anything that is here (outside a class definition) is treated as c]
 ```
 e.g
-```
+```c
 class MyClass {
     int myVar;`
 
@@ -60,6 +66,20 @@ class MyClass {
     }
 }
 ```
+or the following to extend Object, and implement OtherFunction,
+at compile time it can easily determine if something is a class or interface
+```c
+class MyClass (Object, OtherFunction) {
+    int myVar;
+
+    MyClass(=myVar);
+
+    void add(int value) {
+        myVar += value;
+    }
+}
+```
+
 
 ## Compiler ##
 
@@ -75,7 +95,7 @@ Base Lexer, Paser, Compiler
 
 **Alpha 0.2**
 
-Extends
+Extends, implements
 
 **Alpha 0.3**
 
@@ -103,7 +123,7 @@ re-write compiler from c to ClassC
 ## compiler output ##
 
 c file
-```
+```c
 functions...
 <return> <classname>_<functionname>(<parameters>)
 
@@ -111,7 +131,7 @@ constructors...
 init...
 ```
 h file
-```
+```c
 struct <classname>_Data {
     variables...
 }
@@ -123,7 +143,7 @@ struct <classname>_Functions {
 
 signature file
 This is the ClassC equivalent to a header file
-```
+```c
 signature MyClass {
     int myVar;
     void myFunction();
