@@ -1,0 +1,128 @@
+#ifndef __LEX__H_
+#define __LEX__H_
+
+#define MAX_TOKEN_LEN 33
+
+typedef enum {
+    TOKEN_UNEXPECTED = -1,
+    // TOKEN_KEYWORD = 1,
+    TOKEN_IDENTIFIER = 1,
+    TOKEN_NUMBER,
+    // TOKEN_OPERATOR,
+    TOKEN_UNKNOWN,
+    TOKEN_STRING,
+    TOKEN_CHAR_STRING,
+    // TOKEN_COMMENT,
+    // TOKEN_BLOCK_COMMENT,
+    TOKEN_EOF,
+
+    TOKEN_NUMBER_LONG,
+    TOKEN_NUMBER_BINARY,
+    TOKEN_NUMBER_HEX,
+    TOKEN_NUMBER_OCT,
+    TOKEN_NUMBER_FLOAT,
+
+    TOKEN_R_PAREN,
+    TOKEN_L_PAREN,
+    TOKEN_R_BRACE,
+    TOKEN_L_BRACE,
+    TOKEN_R_BRACKET,
+    TOKEN_L_BRACKET,
+    TOKEN_NOT,
+    TOKEN_NOTEQUALS,
+    TOKEN_AT,
+    TOKEN_HASH,
+    TOKEN_DOLLAR,
+    TOKEN_PERCENT,
+    TOKEN_PERCENTEQUALS,
+    TOKEN_CARET,
+    TOKEN_CARETEQUALS,
+    TOKEN_AND,
+    TOKEN_ANDAND,
+    TOKEN_ANDEQUALS,
+    TOKEN_STAR,
+    TOKEN_STARSTAR,
+    TOKEN_STAREQUALS,
+    TOKEN_MINUS,
+    TOKEN_MINUSMIUS,
+    TOKEN_MINUSEQUALS,
+    TOKEN_MINUSEGREATER,
+    TOKEN_PLUS,
+    TOKEN_PLUSPLUS,
+    TOKEN_PLUSEQUALS,
+    TOKEN_EQUALS,
+    TOKEN_EQUALSEQUALS,
+    TOKEN_EQUALSGREATER,
+    TOKEN_OR,
+    TOKEN_OROR,
+    TOKEN_OREQUALS,
+    TOKEN_TILDE,
+    TOKEN_DIV,
+    TOKEN_DIVEQUALS,
+    TOKEN_COLON,
+    TOKEN_SEMICOLON,
+    TOKEN_GREATER,
+    TOKEN_GREATEREQUALS,
+    TOKEN_LESS,
+    TOKEN_LESSEQUALS,
+    TOKEN_COMMA,
+    TOKEN_DOT,
+    TOKEN_DOTDOT,
+    TOKEN_ELLIPSIS,
+    TOKEN_QUESTION,
+
+    TOKEN_RETRUN = 200,
+    TOKEN_IF,
+    TOKEN_ELSE,
+    TOKEN_WHILE,
+    TOKEN_FOR,
+    TOKEN_VOID,
+    TOKEN_CHAR,
+    TOKEN_STRUCT,
+    TOKEN_UNION,
+    TOKEN_SWITCH,
+    TOKEN_CASE,
+    TOKEN_DEFAULT,
+    TOKEN_TYPEDEF,
+    TOKEN_GOTO,
+    TOKEN_DO,
+    TOKEN_BREAK,
+    TOKEN_CONTINUE,
+    TOKEN_ENUM,
+    TOKEN_NULL,
+    TOKEN_CLASS,
+
+    TOKEN_I8 = 300,
+    TOKEN_U8,
+    TOKEN_I16,
+    TOKEN_U16,
+    TOKEN_I32,
+    TOKEN_U32,
+    TOKEN_I64,
+    TOKEN_U64,
+    TOKEN_F32,
+    TOKEN_F64,
+    TOKEN_BOOLEAN,
+    TOKEN_TRUE,
+    TOKEN_FALSE,
+    TOKEN_INT
+} TokenType;
+
+struct KeywordToken {
+    int type;
+    char *value;
+};
+
+typedef struct {
+    TokenType type;
+    int lineCount;
+    int lineOffset;
+    char value[MAX_TOKEN_LEN];
+} Token;
+
+extern const struct KeywordToken keywords[];
+
+Token nextToken(const char **input);
+void lexInit();
+
+#endif
